@@ -1,0 +1,22 @@
+import turtle as t
+clr = ["red","orange","yellow","green","cyan","blue","purple"]
+#移动
+t.penup()
+t.goto(50,0)
+ww = 30 #大小
+for i in range(1,8):
+    t.pendown()
+    t.pencolor(clr[i-1])
+    t.fillcolor(clr[i-1])
+    t.begin_fill()
+    t.left(90)
+    t.circle(100+(i-1)*ww,180)
+    t.right(90)
+    t.forward(ww)
+    t.left(90)
+    t.circle(100+i*ww,-180)
+    t.end_fill()
+    t.right(90)
+t.hideturtle()
+ts = t.getscreen()
+ts.getcanvas().postscript(file="/home/hzl/Desktop/rainbow2.eps")
